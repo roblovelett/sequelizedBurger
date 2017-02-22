@@ -1,3 +1,25 @@
+var Sequelize = require("sequelize"); //pull in sequelize pkg
+var sequelize =  require("../config/connection.js"); //ref connection to db
+
+var Burger = sequelize.define("burger", { //burger model using sequelize
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+    allowNull: false
+  },
+  burger_name: {
+    type: Sequelize.STRING
+  },
+  devoured: {
+    type: Sequelize.BOOLEAN
+  }
+});
+
+
+
+
+/*
 var orm = require("../config/orm.js");
 
 var burger = {
@@ -22,3 +44,4 @@ var burger = {
 };
 
 module.exports = burger;
+*/
