@@ -12,12 +12,14 @@ var Burger = sequelize.define("burger", { //burger model using sequelize
     type: Sequelize.STRING
   },
   devoured: {
-    type: Sequelize.BOOLEAN
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 });
 
+Burger.sync(); //sync w/db
 
-
+module.exports = Burger;
 
 /*
 var orm = require("../config/orm.js");
